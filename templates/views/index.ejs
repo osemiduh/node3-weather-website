@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="../templates/public/css/style">
+    <link rel="icon" href="/img/weather.png">
+</head>
+<body>
+
+    <% include ../partials/nav %>
+    <h1><%=title%></h1>
+    <h2>Created by: <%=name%></h2>
+
+    <a href="/about"><h3>About</h3></a>
+    <a href="/help"><h3>Help page</h3></a>
+
+    <form action="">
+        <input type="text" placeholder="Location">
+        <button>Search</button>
+    </form>
+
+
+    <p id="message-1"></p>
+    <p id="message-2"></p>
+    <script src="/js/app.js"></script>
+    
+</body>
+</html>

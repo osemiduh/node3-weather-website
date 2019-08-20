@@ -1,0 +1,20 @@
+body {
+    color: red;
+}
+
+img {
+    width: 400px;
+}
+
+* {
+    list-style: none;
+}
+
+ul{
+    display: flex;
+}
+
+li {
+    margin-left: 20px;;
+    margin: 0 auto;
+}
