@@ -8,6 +8,8 @@ const geocode = require('./utils/geocode')
 const hbs = require('hbs');
 
 
+
+
 //Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -16,6 +18,8 @@ const partialsPath = path.join('../templates/partials')
 
 //Iniitializing express
 const app = express()
+
+const PORT = process.env.PORT || 3900
 
 
 //Setup ejs engine and views location
@@ -77,28 +81,8 @@ app.get('/weather', (req, res)=>{
     })
 
     
-    // res.send({
+ })
 
-        
-    //     forecast: 'It is snowing',
-    //     location: 'Philadephia',
-    //     address: req.query.address
-    // })
-})
-
-app.get('/products', (req, res)=>{
-    if(!req.query.search) {
-     return   res.send({
-            error: 'You must provide a search term'
-        })
-    }
-
-
-    console.log(req.query.search)
-    res.send({
-        products: []
-    })
-})
 
 app.get('*', (req, res)=>{
  res.render('404', {
@@ -108,49 +92,6 @@ app.get('*', (req, res)=>{
 
 
 
-
-// app.use(express.static(publicDirectoryPath));
-
-
-app.listen(3900, ()=>{
-    console.log('Server is up on port 3900.')
+app.listen(PORT, ()=>{
+    console.log('Server is up on port ' + PORT)
 })
-
-
-// app.use(express.static(partialsPath));
-
-
-
-
-// // Setup handlebars engine and views location
-// app.set('view engine', 'ejs')
-// app.set('views', viewsPath)
-
-// // Setup static directory to serve
-// app.use(express.static(publicDirectoryPath))
-
-// app.get('', (req, res) => {
-//     res.render('index', {
-//         title: 'Weather App',
-//         name: 'Andrew Mead'
-//     })
-// })
-
-
-// app.get('/about', (req, res)=>{
-//     res.render('about', { 
-//         title: 'About Me',
-//         name: 'Cruise Iduh'
-
-//     })
-// })
-
-
-// app.get('/help', (req, res)=>{
-//     res.render('help', {
-//         title: 'Help Page',
-//         name: 'Vulcan'
-//     })
-// })
-
-
